@@ -14,12 +14,12 @@ public class CrystalWrapper : MonoBehaviour
         TOTAL++;
     }
 
-    private void Update()
-    {
-        Debug.Log(TOTAL);
-        Debug.Log(COUNT);
+    //private void Update()
+    //{
+    //    Debug.Log(TOTAL);
+    //    Debug.Log(COUNT);
 
-    }
+    //}
 
     private void OnTriggerEnter(Collider other)
     {

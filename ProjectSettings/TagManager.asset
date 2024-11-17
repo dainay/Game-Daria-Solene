@@ -6,6 +6,12 @@ TagManager:
   tags:
   - CinemachineTarget
   - Crystal
+  - MagicYellow
+  - MagicRed
+  - MagicGreen
+  - MagicBlue
+  - MagicViolet
+  - Scripts
   layers:
   - Default
   - TransparentFX

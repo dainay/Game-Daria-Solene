@@ -6,8 +6,20 @@ public class LightActionController : MonoBehaviour
 {
     [SerializeField] Animator m_Animator;
     [SerializeField] private GameObject m_MagicBall;
+
     private bool isLighting = false;
     private GameObject instantiatedLight;
+
+    [SerializeField] private Transform handL; //attach left hand to make position of the ball
+
+    //all attached materials to change color
+    [SerializeField] private Material red;
+    [SerializeField] private Material yellow;
+    [SerializeField] private Material blue;
+    [SerializeField] private Material violet;
+    [SerializeField] private Material green;
+
+     
 
     public void OnLight(InputValue value)
     {
@@ -30,8 +42,97 @@ public class LightActionController : MonoBehaviour
     }
 
     private void AddMagicBall() {
-        Vector3 spawnPosition = transform.position + transform.forward * 1.25f + transform.up * 1.3f;
-        instantiatedLight = Instantiate(m_MagicBall, spawnPosition, Quaternion.identity);
-        instantiatedLight.transform.SetParent(transform);
+
+        if (handL == null)
+        {
+            Debug.LogError("Hand_L transform is attached in Unity");
+            return;
+        }
+
+
+        Vector3 Position = handL.position + new Vector3(0f, 0.3f, 0f);
+
+        instantiatedLight = Instantiate(m_MagicBall, Position, handL.rotation);
+        instantiatedLight.transform.SetParent(handL);
+
     }
+
+    private int Counter = 0;
+
+    private void Update()
+    {
+        // Check for 'K' key press
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            ApplyMaterialFromManager();
+        }
+    }
+
+    private void ApplyMaterialFromManager()
+    {
+        // Get all collected tags
+        var collectedTags = MagicCollectionManager.GetCollectedTags();
+
+        // If no tags are collected, do nothing
+        if (collectedTags.Count == 0 || isLighting == false)
+        {
+            Debug.Log("No tags collected. No light");
+            return;
+        }
+
+        if (Counter >= collectedTags.Count)
+        {
+            Counter = 0;
+        }
+
+
+        string Tag = collectedTags[Counter];
+
+        Debug.Log("TAG" + Tag);
+
+        Material materialToApply = null;
+        Color lightColor = Color.white;
+
+        switch (Tag)
+        {
+            case "MagicRed":
+                materialToApply = red;
+                lightColor = Color.red;
+                break;
+            case "MagicYellow":
+                materialToApply = yellow;
+                lightColor = Color.yellow;
+                break;
+            case "MagicBlue":
+                materialToApply = blue;
+                lightColor = Color.blue;
+                break;
+            case "MagicViolet":
+                materialToApply = violet;
+                lightColor = new Color(0.5f, 0f, 1f); // Purple
+                break;
+            case "MagicGreen":
+                materialToApply = green;
+                lightColor = Color.green;
+                break;
+            default:
+                lightColor = Color.white;
+                Debug.LogWarning($"No material found for tag: {Tag}");
+                return;
+        }
+
+
+        // Apply the material directly to SphereGlow
+        if (materialToApply != null && instantiatedLight != null)
+        {
+
+            instantiatedLight.transform.Find("SphereGlow").GetComponent<Renderer>().material = materialToApply;
+            instantiatedLight.transform.Find("Point Light").GetComponent<Light>().color = lightColor;
+            Debug.Log($"Applied material for tag: {Tag} to SphereGlow.");
+        }
+        Counter++;
+        Debug.Log(Counter + "Counter");
+    }
+
+
 }
