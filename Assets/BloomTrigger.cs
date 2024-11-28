@@ -3,8 +3,7 @@ using UnityEngine;
 public class CrystalBloom : MonoBehaviour
 {
     private const string PLAYER_TAG = "Player";
-    private const string BLOOM_ANIM_PARAM = "Bloom"; // Название параметра в Animator
-
+    private const string BLOOM_ANIM_PARAM = "Bloom"; 
     private Animator animator;
 
 
@@ -15,7 +14,7 @@ public class CrystalBloom : MonoBehaviour
 
         if (animator == null)
         {
-            Debug.LogWarning("Animator не найден на объекте.");
+            Debug.LogWarning("Animator  is not found for this object.");
         }
     }
 

@@ -12,6 +12,8 @@ TagManager:
   - MagicBlue
   - MagicViolet
   - Scripts
+  - MagicBall
+  - SphereGlow
   layers:
   - Default
   - TransparentFX

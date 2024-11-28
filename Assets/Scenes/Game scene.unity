@@ -6553,7 +6553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 693c105bad462354fbc6555966e993ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Animator: {fileID: 5777780406975755722}
+  m_Animator: {fileID: 0}
   m_MagicBall: {fileID: 1572637314129927491, guid: 3de7bc1f510b1f74d868555572b00a79, type: 3}
   handL: {fileID: 551429025}
   red: {fileID: 2100000, guid: 50997f84c07e41a46b09da38d55ddfe2, type: 2}

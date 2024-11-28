@@ -19,8 +19,6 @@ public class LightActionController : MonoBehaviour
     [SerializeField] private Material violet;
     [SerializeField] private Material green;
 
-     
-
     public void OnLight(InputValue value)
     {
         DoLight();
