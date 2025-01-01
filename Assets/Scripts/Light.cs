@@ -19,6 +19,9 @@ public class LightActionController : MonoBehaviour
     [SerializeField] private Material violet;
     [SerializeField] private Material green;
 
+    [SerializeField] private LayerVisibilityManager layerVisibilityManager;
+
+
     public void OnLight(InputValue value)
     {
         DoLight();
@@ -90,28 +93,34 @@ public class LightActionController : MonoBehaviour
 
         Material materialToApply = null;
         Color lightColor = Color.white;
+        string layerName = null;
 
         switch (Tag)
         {
             case "MagicRed":
                 materialToApply = red;
                 lightColor = Color.red;
+                layerName = "red";
                 break;
             case "MagicYellow":
                 materialToApply = yellow;
                 lightColor = Color.yellow;
+                layerName = "orange";
                 break;
             case "MagicBlue":
                 materialToApply = blue;
                 lightColor = Color.blue;
+                layerName = "blue";
                 break;
             case "MagicViolet":
                 materialToApply = violet;
                 lightColor = new Color(0.5f, 0f, 1f); // Purple
+                layerName = "violet";
                 break;
             case "MagicGreen":
                 materialToApply = green;
                 lightColor = Color.green;
+                layerName = "green";
                 break;
             default:
                 lightColor = Color.white;
@@ -127,6 +136,11 @@ public class LightActionController : MonoBehaviour
             instantiatedLight.transform.Find("SphereGlow").GetComponent<Renderer>().material = materialToApply;
             instantiatedLight.transform.Find("Point Light").GetComponent<Light>().color = lightColor;
             Debug.Log($"Applied material for tag: {Tag} to SphereGlow.");
+        }
+
+         if (!string.IsNullOrEmpty(layerName) && layerVisibilityManager != null)
+        {
+            layerVisibilityManager.SetLayerVisibility(layerName);
         }
         Counter++;
         Debug.Log(Counter + "Counter");

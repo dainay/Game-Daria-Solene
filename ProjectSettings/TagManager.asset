@@ -14,6 +14,7 @@ TagManager:
   - Scripts
   - MagicBall
   - SphereGlow
+  - Hidden
   layers:
   - Default
   - TransparentFX
@@ -21,12 +22,12 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - red
   - Glow
-  - 
-  - 
-  - 
-  - 
+  - blue
+  - orange
+  - green
+  - violet
   - 
   - 
   - 
