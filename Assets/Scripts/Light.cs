@@ -39,6 +39,11 @@ public class LightActionController : MonoBehaviour
         else
         {
             Destroy(instantiatedLight);
+           
+            if (layerVisibilityManager != null)
+            {
+                layerVisibilityManager.HideAllLayers(); //hide current layer with hidden crystals 
+            }
         }
     }
 
@@ -145,6 +150,8 @@ public class LightActionController : MonoBehaviour
         Counter++;
         Debug.Log(Counter + "Counter");
     }
+
+
 
 
 }

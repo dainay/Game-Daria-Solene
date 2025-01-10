@@ -25,7 +25,7 @@ public class LayerVisibilityManager : MonoBehaviour
             obj.SetActive(false);
         }
 
-        Debug.Log("All" + hiddenObjects.Count + "hidden objects are disabled at the start.");
+        //Debug.Log("All" + hiddenObjects.Count + "hidden objects are disabled at the start.");
     }
 
     public void SetLayerVisibility(string layerName)
@@ -85,6 +85,23 @@ public class LayerVisibilityManager : MonoBehaviour
                 obj.SetActive(enable);
             }
         }
+    }
+
+    public void HideAllLayers()
+    {
+        // Проверяем, если текущий активный слой включён
+        if (currentActiveLayer != -1)
+        {
+            // Выключаем все объекты на текущем активном слое
+            ToggleObjectsOnLayer(currentActiveLayer, false);
+
+            // Отключаем видимость слоя в камере
+            Camera.main.cullingMask &= ~(1 << currentActiveLayer);
+
+            currentActiveLayer = -1; // Сбрасываем текущий активный слой
+        }
+
+        Debug.Log("All layers are hidden.");
     }
 
 }

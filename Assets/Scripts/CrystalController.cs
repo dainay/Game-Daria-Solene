@@ -1,35 +1,27 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class CrystalWrapper : MonoBehaviour
 {
     private const string PLAYER_TAG = "Player";
     private const string CRYSTAL_TAG = "Crystal";
-    public static int COUNT = 0;
-    public static int TOTAL = 0;
+    private AudioSource audioSource;
 
     private void Awake()
     {
-        Debug.Log("awake");
-        Debug.Log(PLAYER_TAG);
-        TOTAL++;
+        // calculate total crystals existing in the game
+        CountManager.IncrementTotal();
+        audioSource = GetComponent<AudioSource>();
     }
-
-    //private void Update()
-    //{
-    //    Debug.Log(TOTAL);
-    //    Debug.Log(COUNT);
-
-    //}
-
+ 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log($"{other} entered");
+       
 
 
         if (other.gameObject.CompareTag(PLAYER_TAG))
         {
-            // Add score and collect crystal
-            //ScoreManager.Instance.AddScore();
+             
 
           
             Transform crystal = null;
@@ -45,10 +37,17 @@ public class CrystalWrapper : MonoBehaviour
             }
 
             if (crystal != null)
+
             {
                 Debug.Log("Found crystal with 'crystal' tag, destroying it.");
                 Destroy(crystal.gameObject);
-                COUNT++;
+            
+                CountManager.IncrementCollected();    // increment the score when one crystal is collected
+                if (audioSource != null)
+                {
+                    audioSource.Play(); //play sound when crystal is collected
+                }                                     // Play the sound
+
             }
             else
             {
