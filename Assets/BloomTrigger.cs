@@ -12,10 +12,10 @@ public class CrystalBloom : MonoBehaviour
         
         animator = GetComponent<Animator>();
 
-        if (animator == null)
-        {
-            Debug.LogWarning("Animator  is not found for this object.");
-        }
+        //if (animator == null)
+        //{
+        //    Debug.LogWarning("Animator  is not found for crystal object.");
+        //}
     }
 
     private void OnTriggerEnter(Collider other)

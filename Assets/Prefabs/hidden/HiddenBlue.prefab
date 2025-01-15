@@ -76,6 +76,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.53024167
       objectReference: {fileID: 0}
+    - target: {fileID: 6710189255731863137, guid: d046a0800e4d59d489ca10d1120d104f, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8864993645859434360, guid: d046a0800e4d59d489ca10d1120d104f, type: 3}
       propertyPath: m_Layer
       value: 8
