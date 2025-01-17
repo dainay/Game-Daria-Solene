@@ -1,16 +1,24 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Sing : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Animator m_AnimatorUser;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        bool isPressed = Keyboard.current.jKey.isPressed;
+
+        if (isPressed)
+        {
+            Debug.Log("Key is being held.");
+            m_AnimatorUser.SetBool("SingingBool", true);
+        }
+        else
+        {
+            Debug.Log("Key is released.");
+            m_AnimatorUser.SetBool("SingingBool", false);
+        }
     }
+
 }

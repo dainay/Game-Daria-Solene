@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Singing",
+                    "type": "Button",
+                    "id": "b896bb98-7585-42c5-ad71-95c5c101fe14",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -230,23 +239,34 @@
                 },
                 {
                     "name": "",
-                    "id": "0b7aac7e-1b8e-43a2-a6a9-d580de02647c",
-                    "path": "",
+                    "id": "6a8c8121-ed5c-4a8c-abc1-3d954e285bfd",
+                    "path": "<Keyboard>/l",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";KeyboardMouse",
                     "action": "Light",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "6a8c8121-ed5c-4a8c-abc1-3d954e285bfd",
-                    "path": "<Keyboard>/l",
+                    "id": "d614a64b-560a-46ae-bf6e-7d8fb2785ee1",
+                    "path": "",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Light",
+                    "action": "Singing",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5075cbc2-718b-4f34-ae95-cc5cb14a10a5",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";KeyboardMouse",
+                    "action": "Singing",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
