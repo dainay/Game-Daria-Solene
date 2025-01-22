@@ -250,20 +250,9 @@
                 },
                 {
                     "name": "",
-                    "id": "d614a64b-560a-46ae-bf6e-7d8fb2785ee1",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Singing",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "5075cbc2-718b-4f34-ae95-cc5cb14a10a5",
                     "path": "<Keyboard>/j",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": ";KeyboardMouse",
                     "action": "Singing",

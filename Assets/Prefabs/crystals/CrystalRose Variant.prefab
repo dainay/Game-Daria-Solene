@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 50.1
       objectReference: {fileID: 0}
+    - target: {fileID: 2758540901175567337, guid: f82052393e61d57468cd23c39b115320, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7dc869fcb2609cd45b13133fb3b1d34f, type: 2}
     - target: {fileID: 3181114921146135645, guid: f82052393e61d57468cd23c39b115320, type: 3}
       propertyPath: m_Name
       value: CrystalRose Variant
