@@ -98,6 +98,12 @@ namespace StarterAssets
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
 
+        [Header("Flying System")]
+        public bool isFlying = false; // Включен ли режим полета
+        public float FlightSpeed = 5.0f; // Скорость движения в воздухе
+        public float FlightVerticalSpeed = 3.0f; // Скорость подъема и спуска
+
+
 #if ENABLE_INPUT_SYSTEM 
         private PlayerInput _playerInput;
 #endif
@@ -154,12 +160,32 @@ namespace StarterAssets
 
         private void Update()
         {
-            _hasAnimator = TryGetComponent(out _animator);
-
-            JumpAndGravity();
-            GroundedCheck();
-            Move();
+            if (isFlying)
+            {
+                FlyMovement();
+                Move();
+            }
+            else
+            {
+                GroundedCheck();
+                JumpAndGravity();
+                Move();
+            }
         }
+         
+
+        private void FlyMovement()
+        {
+            float verticalMovement = 0;
+
+            if (Input.GetKey(KeyCode.Space)) verticalMovement = FlightVerticalSpeed; // Up
+            if (Input.GetKey(KeyCode.LeftControl)) verticalMovement = -FlightVerticalSpeed; // Down
+
+            // updating y position
+            _controller.Move(new Vector3(0, verticalMovement * Time.deltaTime, 0));
+        }
+
+         
 
         private void LateUpdate()
         {
