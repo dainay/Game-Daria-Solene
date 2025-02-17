@@ -7266,7 +7266,6 @@ GameObject:
   - component: {fileID: 1481433752}
   - component: {fileID: 1481433751}
   - component: {fileID: 1481433750}
-  - component: {fileID: 1481433749}
   - component: {fileID: 1481433759}
   m_Layer: 8
   m_Name: PlayerArmatureBird
@@ -7294,21 +7293,6 @@ Transform:
   - {fileID: 1341783839}
   m_Father: {fileID: 1920812045}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1481433749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1481433747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32380817f511bc1458ccad845cdea98d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextCharacter: {fileID: 974238577524077834}
-  nextFollowTarget: {fileID: 4860276692942851158}
-  cinemachineCamera: {fileID: 857436774}
 --- !u!81 &1481433750
 AudioListener:
   m_ObjectHideFlags: 0
@@ -7329,7 +7313,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90d7f3f21f33f7449713b78c2fe2769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AnimatorUser: {fileID: 1481433758}
 --- !u!82 &1481433752
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7522,7 +7505,7 @@ MonoBehaviour:
     m_ActionName: UI/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Bird
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &1481433754
@@ -7640,7 +7623,7 @@ Animator:
   m_GameObject: {fileID: 1481433747}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 5f9ee47b299fd7d4ca558f9f0fd889d1, type: 3}
-  m_Controller: {fileID: 9100000, guid: 7c016f0e27c780a4ea38a3aa99f4b0ec, type: 2}
+  m_Controller: {fileID: 9100000, guid: be929e3be2031574ba2a87f75e1be934, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7661,9 +7644,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1481433747}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9234a19d87a68f4f8962e5c64ef54e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d1b5c3bdb8fdc2478206c7395c9fcd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextCharacter: {fileID: 974238577524077834}
+  nextFollowTarget: {fileID: 4860276692942851158}
+  cinemachineCamera: {fileID: 857436774}
 --- !u!1 &1504556636 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1507636620937791836, guid: 7097ba7ba649e1f41bba232312bdcbd8, type: 3}
@@ -7849,9 +7835,9 @@ GameObject:
   - component: {fileID: 1625438938}
   - component: {fileID: 1625438937}
   - component: {fileID: 1625438934}
-  - component: {fileID: 1625438943}
   - component: {fileID: 1625438944}
   - component: {fileID: 1625438945}
+  - component: {fileID: 1625438946}
   m_Layer: 8
   m_Name: PlayerArmatureDog
   m_TagString: Player
@@ -8200,19 +8186,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1625438943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1625438932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f90d7f3f21f33f7449713b78c2fe2769, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AnimatorUser: {fileID: 1625438942}
 --- !u!81 &1625438944
 AudioListener:
   m_ObjectHideFlags: 0
@@ -8230,12 +8203,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1625438932}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32380817f511bc1458ccad845cdea98d, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d1b5c3bdb8fdc2478206c7395c9fcd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextCharacter: {fileID: 974238577524077834}
-  nextFollowTarget: {fileID: 4860276692942851158}
+  nextCharacter: {fileID: 1481433747}
+  nextFollowTarget: {fileID: 340809390}
   cinemachineCamera: {fileID: 857436774}
+--- !u!114 &1625438946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625438932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 684a58376711da44cb4f4415bbc9970a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AnimatorUser: {fileID: 1625438942}
 --- !u!1 &1648338057
 GameObject:
   m_ObjectHideFlags: 0
@@ -12261,6 +12247,7 @@ GameObject:
   - component: {fileID: 7018120647489757179}
   - component: {fileID: 7018120647489757180}
   - component: {fileID: 7018120647489757181}
+  - component: {fileID: 7018120647489757183}
   - component: {fileID: 7018120647489757182}
   m_Layer: 8
   m_Name: PlayerArmature
@@ -13352,7 +13339,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 974238577524077834}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32380817f511bc1458ccad845cdea98d, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ea9ab9e058cab1419c83e54a997f48f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AnimatorUser: {fileID: 5777780406975755722}
+  singingClips:
+  - {fileID: 8300000, guid: 252ad8821fc763d4e8501d0ce58cc479, type: 3}
+  - {fileID: 8300000, guid: 57fa9f65217ab9b4090302f3fa0540d3, type: 3}
+  - {fileID: 8300000, guid: ef1776e62358f6e4ea0cdd957d5078fe, type: 3}
+  audioSource: {fileID: 7018120647489757181}
+--- !u!114 &7018120647489757183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974238577524077834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d1b5c3bdb8fdc2478206c7395c9fcd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nextCharacter: {fileID: 1625438932}
