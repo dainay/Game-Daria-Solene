@@ -99,9 +99,9 @@ namespace StarterAssets
         private int _animIDMotionSpeed;
 
         [Header("Flying System")]
-        public bool isFlying = false; // Включен ли режим полета
-        public float FlightSpeed = 5.0f; // Скорость движения в воздухе
-        public float FlightVerticalSpeed = 3.0f; // Скорость подъема и спуска
+        public bool isFlying = false;
+        public float FlightSpeed = 5.0f; 
+        public float FlightVerticalSpeed = 3.0f; 
 
 
 #if ENABLE_INPUT_SYSTEM 
