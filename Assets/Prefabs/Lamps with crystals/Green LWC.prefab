@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 584048919282406930}
   m_Layer: 0
-  m_Name: Green Lamp W Crystals
+  m_Name: Green LWC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
