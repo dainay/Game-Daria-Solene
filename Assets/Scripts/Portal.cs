@@ -8,8 +8,6 @@ public class Portal : MonoBehaviour
     private GameObject player; 
     private CharacterController characterController; // Reference to the CharacterController
     private AudioSource audioSource; // Reference to the AudioSource connected to the portal
-
-
     private void Start()
     {
         // Find the player object by tag
@@ -38,7 +36,6 @@ public class Portal : MonoBehaviour
             Debug.LogError("AudioSource not found on the portal");
         }
     }
-
     private void OnTriggerEnter(Collider other)
     { 
         if (other.CompareTag("Player") && characterController != null)

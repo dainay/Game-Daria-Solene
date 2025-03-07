@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-
 public class LayerVisibilityManager : MonoBehaviour
 {
     [SerializeField] private int redLayer;
@@ -10,24 +9,18 @@ public class LayerVisibilityManager : MonoBehaviour
     [SerializeField] private int greenLayer;
 
     //all hidden crystals will be here
-    private List<GameObject> hiddenObjects = new List<GameObject>(); // Все скрытые объекты
-    private int currentActiveLayer = -1; // Текущий активный слой (-1, если ничего не активно)
-
-
+    private List<GameObject> hiddenObjects = new List<GameObject>(); // all hidden objects
+    private int currentActiveLayer = -1; // put -1 if we see nothing
     private void Start()
     {
-        // Находим все объекты с тегом "hidden" и сохраняем их
+        // find all hidden objects and disable them
         hiddenObjects.AddRange(GameObject.FindGameObjectsWithTag("Hidden"));
-         
 
         foreach (GameObject obj in hiddenObjects)
         {
             obj.SetActive(false);
         }
-
-        //Debug.Log("All" + hiddenObjects.Count + "hidden objects are disabled at the start.");
     }
-
     public void SetLayerVisibility(string layerName)
     {
         Camera mainCamera = Camera.main; // Get the main camera
@@ -51,14 +44,11 @@ public class LayerVisibilityManager : MonoBehaviour
             ToggleObjectsOnLayer(currentActiveLayer, false);
         }
 
-        // Включаем объекты на новом слое
         ToggleObjectsOnLayer(targetLayer, true);
         currentActiveLayer = targetLayer;
 
-
         int[] magicLayers = { redLayer, orangeLayer, blueLayer, violetLayer, greenLayer };
 
-         
         foreach (int layer in magicLayers) //check every layer and keep on only one that we targeted
         {
             if (layer == targetLayer)
@@ -69,15 +59,12 @@ public class LayerVisibilityManager : MonoBehaviour
             {
                 mainCamera.cullingMask &= ~(1 << layer); // Disable other layers
             }
-           
         }
-
         Debug.Log("Layer " + layerName + " is now visible, others are hidden.");
     }
-
     private void ToggleObjectsOnLayer(int layerIndex, bool enable)
     {
-        // Включаем или выключаем только объекты на указанном слое
+        // toggle all objects on the layer that we chose
         foreach (GameObject obj in hiddenObjects)
         {
             if (obj.layer == layerIndex)
@@ -86,19 +73,18 @@ public class LayerVisibilityManager : MonoBehaviour
             }
         }
     }
-
     public void HideAllLayers()
     {
-        // Проверяем, если текущий активный слой включён
+        //check if we see something
         if (currentActiveLayer != -1)
         {
-            // Выключаем все объекты на текущем активном слое
+            // turn off all objects on the current layer
             ToggleObjectsOnLayer(currentActiveLayer, false);
 
-            // Отключаем видимость слоя в камере
+            // Disable the current layer
             Camera.main.cullingMask &= ~(1 << currentActiveLayer);
 
-            currentActiveLayer = -1; // Сбрасываем текущий активный слой
+            currentActiveLayer = -1; // removing the current layer from the variable
         }
 
         Debug.Log("All layers are hidden.");

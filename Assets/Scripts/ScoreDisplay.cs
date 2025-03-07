@@ -6,7 +6,6 @@ public class ScoreDisplay : MonoBehaviour
     [SerializeField] private TMP_Text crystalScoreText;
 
     public static ScoreDisplay Instance;
-
     private void Awake()
     {
         if (Instance == null)
@@ -30,7 +29,7 @@ public class ScoreDisplay : MonoBehaviour
 
         if (crystalScoreText == null)
         {
-            Debug.LogError("CrystalScoreText is not assigneddddddddddddddddddddddddddddddddd in the Inspector!");
+            Debug.LogError("CrystalScoreText is not assigned in the Inspector!");
         }
 
         if (crystalScoreText == null)

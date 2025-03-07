@@ -11,7 +11,6 @@ public class RuneMusic : MonoBehaviour
     private bool playerInZone = false;
 
     private PlayerInput playerInput; //needed to connect input assets system
-
     private void Start()
     {
         initialPositions = new Vector3[crystals.Length];
@@ -41,7 +40,6 @@ public class RuneMusic : MonoBehaviour
             CancelInvoke(nameof(MoveCrystalsUp));   
         }
     }
-
     private void MoveCrystalsUp()
     {
         bool allReached = true; //let's assume all crystals are in place

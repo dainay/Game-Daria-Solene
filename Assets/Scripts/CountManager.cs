@@ -4,7 +4,6 @@ public class CountManager : MonoBehaviour
 {
     public static int TotalCount = 0;
     public static int CollectedCount = 0;
-
     private void Start()
     {
         // Initialize the score display
@@ -17,7 +16,6 @@ public class CountManager : MonoBehaviour
             Debug.LogError("ScoreDisplay.Instance is null! Ensure a ScoreDisplay exists in the scene.");
         }
     }
-
     public static void IncrementTotal()
     {
         TotalCount++;
@@ -27,7 +25,6 @@ public class CountManager : MonoBehaviour
             ScoreDisplay.Instance.UpdateScore(CollectedCount, TotalCount);
         }
     }
-
     public static void IncrementCollected()
     {
         CollectedCount++;
@@ -36,7 +33,5 @@ public class CountManager : MonoBehaviour
         {
             ScoreDisplay.Instance.UpdateScore(CollectedCount, TotalCount);
         }
-    }
-
-     
+    }     
 }

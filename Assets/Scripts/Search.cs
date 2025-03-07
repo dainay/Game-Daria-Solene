@@ -41,7 +41,6 @@ public class Search : MonoBehaviour
             m_AnimatorUser.SetBool(SearchingBool, true);
             Debug.Log("Searching is TRUE");
 
-
             ActivateCrystalAnimations();
         }
         else

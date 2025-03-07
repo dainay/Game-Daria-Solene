@@ -20,13 +20,10 @@ public class LightActionController : MonoBehaviour
     [SerializeField] private Material green;
 
     [SerializeField] private LayerVisibilityManager layerVisibilityManager;
-
-
     public void OnLight(InputValue value)
     {
         DoLight();
     }
-
     private void DoLight()
     {
         isLighting = !isLighting;
@@ -46,7 +43,6 @@ public class LightActionController : MonoBehaviour
             }
         }
     }
-
     private void AddMagicBall() {
 
         if (handL == null)
@@ -55,16 +51,13 @@ public class LightActionController : MonoBehaviour
             return;
         }
 
-
         Vector3 Position = handL.position + new Vector3(0f, 0.3f, 0f);
 
         instantiatedLight = Instantiate(m_MagicBall, Position, handL.rotation);
         instantiatedLight.transform.SetParent(handL);
-
     }
 
     private int Counter = 0;
-
     private void Update()
     {
         // Check for 'K' key press
@@ -73,7 +66,6 @@ public class LightActionController : MonoBehaviour
             ApplyMaterialFromManager();
         }
     }
-
     private void ApplyMaterialFromManager()
     {
         // Get all collected tags
@@ -91,9 +83,7 @@ public class LightActionController : MonoBehaviour
             Counter = 0;
         }
 
-
         string Tag = collectedTags[Counter];
-
         Debug.Log("TAG" + Tag);
 
         Material materialToApply = null;
@@ -133,7 +123,6 @@ public class LightActionController : MonoBehaviour
                 return;
         }
 
-
         // Apply the material directly to SphereGlow
         if (materialToApply != null && instantiatedLight != null)
         {
@@ -150,8 +139,4 @@ public class LightActionController : MonoBehaviour
         Counter++;
         Debug.Log(Counter + "Counter");
     }
-
-
-
-
 }

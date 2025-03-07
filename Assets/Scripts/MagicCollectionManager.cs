@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class MagicCollectionManager
+public static class MagicCollectionManager 
 {
     private static List<string> collectedTags = new List<string>();
-
     public static void AddTag(string tag)
     {
         if (!collectedTags.Contains(tag))
@@ -16,11 +15,9 @@ public static class MagicCollectionManager
             Debug.Log("Current Collected Tags: " + string.Join(", ", collectedTags));
         }
     }
-
     public static List<string> GetCollectedTags()
     {
         return collectedTags;
     }
-
   
 }

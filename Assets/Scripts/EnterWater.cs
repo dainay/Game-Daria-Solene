@@ -1,6 +1,5 @@
 using Cinemachine;
 using UnityEngine;
-
 public class EnterWater : MonoBehaviour
 {
     [SerializeField] private Transform humanRoot;
@@ -13,7 +12,6 @@ public class EnterWater : MonoBehaviour
 
     private Transform currentPlayer; 
     private bool isUnderwater = false;  
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !isUnderwater) // Enter water only once
@@ -32,7 +30,6 @@ public class EnterWater : MonoBehaviour
             isUnderwater = true; // Mark that we are underwater
         }
     }
-
     private void OnTriggerExit(Collider other)
     {
         if (isUnderwater && other.CompareTag("Player")) // Ensure it's an actual exit
@@ -40,7 +37,6 @@ public class EnterWater : MonoBehaviour
             TransformBackToHuman();
         }
     }
-
     private void TransformBackToHuman()
     {
         Debug.Log("Transforming back to Human");

@@ -29,7 +29,6 @@ public class Sing : MonoBehaviour
             audioSource.Stop();
         }
     }
-
     private void PlayRandomAudio()
     {
         if (singingClips.Length > 0)

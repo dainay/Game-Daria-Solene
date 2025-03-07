@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class BillboardController : MonoBehaviour
 {
-    [SerializeField] private Transform m_Camera;
+    [SerializeField] private Transform Camera;
 
     void LateUpdate()
     {
-        transform.LookAt(transform.position + m_Camera.forward);
+        transform.LookAt(transform.position + Camera.forward);
     }
 }

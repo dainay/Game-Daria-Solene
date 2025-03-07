@@ -552,17 +552,6 @@
                 },
                 {
                     "name": "",
-                    "id": "12451c46-ed4c-44e0-a832-d08621e4fe68",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CharacterSwitch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "b35a0baa-c86b-4a6c-b2e7-f6d22f13c7f2",
                     "path": "<Keyboard>/o",
                     "interactions": "",
@@ -574,12 +563,12 @@
                 },
                 {
                     "name": "",
-                    "id": "c38d3216-7455-4368-a245-644f19d69ac3",
-                    "path": "",
+                    "id": "48af8ac3-c4c9-4489-b756-ce41b346a7b4",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Searching",
+                    "groups": ";Gamepad",
+                    "action": "CharacterSwitch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -590,6 +579,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
+                    "action": "Searching",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "44a1aa4c-3559-4e65-a1e0-e76d35c55679",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
                     "action": "Searching",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -825,11 +825,11 @@
                 },
                 {
                     "name": "",
-                    "id": "e710003c-0559-4ce0-bd3a-8fa7c9335d91",
-                    "path": "",
+                    "id": "1acb44c9-1d5c-41d8-80ad-52a059031bb7",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "CharacterSwitch",
                     "isComposite": false,
                     "isPartOfComposite": false
