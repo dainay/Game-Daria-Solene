@@ -15,15 +15,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "CharacterSwitch",
-                    "type": "Button",
-                    "id": "e23bd48e-8160-48f8-b2ba-ff9932dc7476",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Look",
                     "type": "Value",
                     "id": "2690c379-f54d-45be-a724-414123833eb4",
@@ -33,18 +24,27 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Jump",
-                    "type": "Button",
-                    "id": "8c4abdf8-4099-493a-aa1a-129acec7c3df",
+                    "name": "Sprint",
+                    "type": "PassThrough",
+                    "id": "980e881e-182c-404c-8cbf-3d09fdb48fef",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Sprint",
-                    "type": "PassThrough",
-                    "id": "980e881e-182c-404c-8cbf-3d09fdb48fef",
+                    "name": "CharacterSwitch",
+                    "type": "Button",
+                    "id": "e23bd48e-8160-48f8-b2ba-ff9932dc7476",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "8c4abdf8-4099-493a-aa1a-129acec7c3df",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -182,22 +182,22 @@
                 },
                 {
                     "name": "",
-                    "id": "bf79cc14-4b3c-4877-b6a6-5fc27caa33fa",
-                    "path": "",
+                    "id": "3340f485-c537-4521-bca3-8682c3f30130",
+                    "path": "<Keyboard>/o",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";KeyboardMouse",
                     "action": "CharacterSwitch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "3340f485-c537-4521-bca3-8682c3f30130",
-                    "path": "<Keyboard>/o",
+                    "id": "d0faeaba-c11d-4a2a-9bc3-d3d321b92fed",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "CharacterSwitch",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -281,11 +281,33 @@
                 },
                 {
                     "name": "",
+                    "id": "f67e021e-61b1-47b6-b7bb-964ad48488c9",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Light",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "5075cbc2-718b-4f34-ae95-cc5cb14a10a5",
                     "path": "<Keyboard>/j",
                     "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": ";KeyboardMouse",
+                    "action": "Singing",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "032ef9d3-9938-4797-b10a-f72a7db661c9",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
                     "action": "Singing",
                     "isComposite": false,
                     "isPartOfComposite": false
