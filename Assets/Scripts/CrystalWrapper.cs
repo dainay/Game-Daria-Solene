@@ -6,7 +6,6 @@ public class CrystalWrapper : MonoBehaviour
     private const string PLAYER_TAG = "Player";
     private const string CRYSTAL_TAG = "Crystal";
     private AudioSource audioSource;
-
     private void Awake()
     {
         // calculate total crystals existing in the game
@@ -31,12 +30,13 @@ public class CrystalWrapper : MonoBehaviour
             {
                 Debug.Log("Found crystal with 'crystal' tag, destroying it.");
                 Destroy(crystal.gameObject);
-                CountManager.IncrementCollected();    // increment the score when one crystal is collected
+                CountManager.IncrementCollected(); // increment the score when one crystal is collected
                 
                 if (audioSource != null)
                 {
                     audioSource.Play(); //play sound when crystal is collected
-                }                                     // Play the sound
+                }
+                // Play the sound
             }
             else
             {

@@ -8,20 +8,23 @@ public class Portal : MonoBehaviour
     private GameObject player; 
     private CharacterController characterController; // Reference to the CharacterController
     private AudioSource audioSource; // Reference to the AudioSource connected to the portal
+
+    private const string PLAYER_TAG = "Player";
+
     private void Start()
     {
         // Find the player object by tag
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.FindWithTag(PLAYER_TAG);
 
         if (player == null)
         {
-            Debug.LogError("Player not found!!");
+            Debug.LogError("Player not found");
             return;
         }
 
         // Get the CharacterController from the player.
-        // Need to disconnect it durign teleportation because it conflicts with the moving made by script.
-        // If not disconnected, theportals works not every time
+        // Need to disconnect it during teleportation because it conflicts with the moving made by script.
+        // If not disconnected, the portals work not every time
         characterController = player.GetComponent<CharacterController>();
 
         if (characterController == null)
@@ -38,7 +41,7 @@ public class Portal : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     { 
-        if (other.CompareTag("Player") && characterController != null)
+        if (other.CompareTag(PLAYER_TAG) && characterController != null)
         {
          
             GameObject targetPortal = GameObject.FindWithTag(targetPortalTag); //found the target portal by tag

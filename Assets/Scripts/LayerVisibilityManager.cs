@@ -8,7 +8,6 @@ public class LayerVisibilityManager : MonoBehaviour
     [SerializeField] private int violetLayer;
     [SerializeField] private int greenLayer;
 
-    //all hidden crystals will be here
     private List<GameObject> hiddenObjects = new List<GameObject>(); // all hidden objects
     private int currentActiveLayer = -1; // put -1 if we see nothing
     private void Start()

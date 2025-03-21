@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.Rendering.HighDefinition.ProbeSettings;
@@ -20,6 +22,39 @@ public class LightActionController : MonoBehaviour
     [SerializeField] private Material green;
 
     [SerializeField] private LayerVisibilityManager layerVisibilityManager;
+
+    public enum MagicColor
+    {
+        Red,
+        Yellow,
+        Blue,
+        Violet,
+        Green
+    }
+    public enum MagicLayer
+    {
+        RedLayer,
+        OrangeLayer,
+        BlueLayer,
+        VioletLayer,
+        GreenLayer
+    }
+
+    //use Dictionary to keep all settings of materials and possible colors for the spehre
+    private Dictionary<MagicColor, (Material material, Color color, MagicLayer layer)> magicSettings;
+
+    private void Start()
+    {
+        magicSettings = new Dictionary<MagicColor, (Material, Color, MagicLayer)>
+        {
+            { MagicColor.Red, (red, Color.red, MagicLayer.RedLayer) },
+            { MagicColor.Yellow, (yellow, Color.yellow, MagicLayer.OrangeLayer) },
+            { MagicColor.Blue, (blue, Color.blue, MagicLayer.BlueLayer) },
+            { MagicColor.Violet, (violet, new Color(0.5f, 0f, 1f), MagicLayer.VioletLayer) },
+            { MagicColor.Green, (green, Color.green, MagicLayer.GreenLayer) }
+        };
+    }
+
     public void OnLight(InputValue value)
     {
         DoLight();
@@ -31,15 +66,15 @@ public class LightActionController : MonoBehaviour
 
         if (isLighting)
         {
-            StartCoroutine("AddMagicBall", 1000f);
+            AddMagicBall();
         }
         else
         {
             Destroy(instantiatedLight);
-           
+
             if (layerVisibilityManager != null)
             {
-                layerVisibilityManager.HideAllLayers(); //hide current layer with hidden crystals 
+                layerVisibilityManager.HideAllLayers();
             }
         }
     }
@@ -58,21 +93,23 @@ public class LightActionController : MonoBehaviour
     }
 
     private int Counter = 0;
-    private void Update()
+     public void OnChangeLightColor(InputValue value)
     {
-        // Check for 'K' key press
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            ApplyMaterialFromManager();
-        }
+        ApplyMaterialFromManager();
     }
+
+    //to handle enum names
+    private bool TryGetMagicColor(string tag, out MagicColor magicColor)
+    {
+        return Enum.TryParse(tag.Replace("Magic", ""), true, out magicColor);
+    }
+
+
     private void ApplyMaterialFromManager()
     {
-        // Get all collected tags
         var collectedTags = MagicCollectionManager.GetCollectedTags();
 
-        // If no tags are collected, do nothing
-        if (collectedTags.Count == 0 || isLighting == false)
+        if (collectedTags.Count == 0 || !isLighting)
         {
             Debug.Log("No tags collected. No light");
             return;
@@ -83,60 +120,47 @@ public class LightActionController : MonoBehaviour
             Counter = 0;
         }
 
-        string Tag = collectedTags[Counter];
-        Debug.Log("TAG" + Tag);
-
-        Material materialToApply = null;
-        Color lightColor = Color.white;
-        string layerName = null;
-
-        switch (Tag)
-        {
-            case "MagicRed":
-                materialToApply = red;
-                lightColor = Color.red;
-                layerName = "red";
-                break;
-            case "MagicYellow":
-                materialToApply = yellow;
-                lightColor = Color.yellow;
-                layerName = "orange";
-                break;
-            case "MagicBlue":
-                materialToApply = blue;
-                lightColor = Color.blue;
-                layerName = "blue";
-                break;
-            case "MagicViolet":
-                materialToApply = violet;
-                lightColor = new Color(0.5f, 0f, 1f); // Purple
-                layerName = "violet";
-                break;
-            case "MagicGreen":
-                materialToApply = green;
-                lightColor = Color.green;
-                layerName = "green";
-                break;
-            default:
-                lightColor = Color.white;
-                Debug.LogWarning($"No material found for tag: {Tag}");
-                return;
-        }
-
-        // Apply the material directly to SphereGlow
-        if (materialToApply != null && instantiatedLight != null)
-        {
-
-            instantiatedLight.transform.Find("SphereGlow").GetComponent<Renderer>().material = materialToApply;
-            instantiatedLight.transform.Find("Point Light").GetComponent<Light>().color = lightColor;
-            Debug.Log($"Applied material for tag: {Tag} to SphereGlow.");
-        }
-
-         if (!string.IsNullOrEmpty(layerName) && layerVisibilityManager != null)
-        {
-            layerVisibilityManager.SetLayerVisibility(layerName);
-        }
+        string tag = collectedTags[Counter];
         Counter++;
-        Debug.Log(Counter + "Counter");
+
+        Debug.Log("TAG " + tag);
+
+        //check if we have settings for the tag in the dictionary
+        if (TryGetMagicColor(tag, out MagicColor magicColor) && magicSettings.TryGetValue(magicColor, out var settings))
+        {
+            if (instantiatedLight != null)
+            {
+                //both things that we have to change, sphere material and light
+                Renderer sphereRenderer = instantiatedLight.transform.Find("SphereGlow")?.GetComponent<Renderer>();
+                Light pointLight = instantiatedLight.transform.Find("Point Light")?.GetComponent<Light>();
+
+                if (sphereRenderer != null)
+                {
+                    sphereRenderer.material = settings.material;
+                }
+                else
+                {
+                    Debug.LogError("Sphere is not foudn");
+                }
+
+                if (pointLight != null)
+                {
+                    pointLight.color = settings.color;
+                }
+                else
+                {
+                    Debug.LogError("Light is not found");
+                }
+
+                Debug.Log($"Applied material for {magicColor}");
+            }
+
+            //show the layer that we recieve from the dictionary
+            layerVisibilityManager?.SetLayerVisibility(settings.layer.ToString());
+        }
+        else
+        {
+            Debug.LogWarning($"No material found for {tag}");
+        }
     }
 }
