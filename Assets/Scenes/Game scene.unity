@@ -6274,7 +6274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af7a8d486c5de624c924cb9db22d78e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Camera: {fileID: 853125873}
+  Camera: {fileID: 0}
 --- !u!1 &761516958
 GameObject:
   m_ObjectHideFlags: 0
@@ -8351,11 +8351,87 @@ MonoBehaviour:
     m_ActionName: 'Player/Sprint[/Keyboard/leftShift,/XInputControllerWindows/leftTrigger]'
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: e4ce1614-c754-48c1-9103-33130441661f
-    m_ActionName: UI/New action
+    m_ActionId: e23bd48e-8160-48f8-b2ba-ff9932dc7476
+    m_ActionName: 'Player/CharacterSwitch[/Keyboard/o,/XInputControllerWindows/buttonWest]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1c9b6ec8-a3f8-4e2b-8329-d3e03e79f0fc
+    m_ActionName: 'Player/Light[/Keyboard/l,/XInputControllerWindows/rightShoulder]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b896bb98-7585-42c5-ad71-95c5c101fe14
+    m_ActionName: 'Player/Singing[/Keyboard/j,/XInputControllerWindows/leftShoulder]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 08aad034-b977-44ea-a696-c032d502fa0d
+    m_ActionName: 'Player/ChangeLightColor[/Keyboard/k,/XInputControllerWindows/buttonEast]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 858306fa-c652-46bc-a415-4752405763d7
+    m_ActionName: 'Dog/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/XInputControllerWindows/leftStick]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b73191ac-58ca-45b2-a7c0-c4189f7fadc0
+    m_ActionName: 'Dog/Look[/Mouse/delta,/Pen/delta,/XInputControllerWindows/rightStick]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3b3f66e2-e55f-4bb2-822c-936573624fe6
+    m_ActionName: 'Dog/Jump[/Keyboard/space,/XInputControllerWindows/buttonSouth]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 497dbfe0-87a9-4ef5-8afc-9491a265854d
+    m_ActionName: 'Dog/Sprint[/Keyboard/leftShift,/XInputControllerWindows/leftTrigger]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 08b1e636-4f2c-4ada-8023-79347937b664
+    m_ActionName: 'Dog/CharacterSwitch[/Keyboard/o,/XInputControllerWindows/buttonWest]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 038a68c8-a5f7-4da1-a0e1-a35f780ed0a8
+    m_ActionName: 'Dog/Searching[/Keyboard/j,/XInputControllerWindows/buttonNorth]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a40c81fb-5b6b-448a-b91c-78530bd8e81e
+    m_ActionName: 'Bird/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/XInputControllerWindows/leftStick]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b267a84c-ecdd-4584-8cad-74ce85bcc270
+    m_ActionName: 'Bird/Look[/Mouse/delta,/Pen/delta,/XInputControllerWindows/rightStick]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 776285dd-b28f-4f48-8b7d-e2cf0fec1327
+    m_ActionName: 'Bird/Jump[/Keyboard/space,/XInputControllerWindows/buttonSouth]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 00848eea-5bf9-4d8a-83bd-57c38dc7ee60
+    m_ActionName: 'Bird/Sprint[/Keyboard/leftShift,/XInputControllerWindows/leftTrigger]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0bc0493b-251e-47ca-9127-da67aeebb8b5
+    m_ActionName: 'Bird/CharacterSwitch[/XInputControllerWindows/buttonWest,/Keyboard/o]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 418c0870-b836-4f35-b244-2689ce30e2d2
+    m_ActionName: 'Bird/FlyUp[/Keyboard/space,/XInputControllerWindows/rightShoulder]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e25a476c-f652-4216-9ca6-3cf50fa21bd5
+    m_ActionName: 'Bird/FlyDown[/Keyboard/leftCtrl,/XInputControllerWindows/leftShoulder]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: Bird
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &1481433754

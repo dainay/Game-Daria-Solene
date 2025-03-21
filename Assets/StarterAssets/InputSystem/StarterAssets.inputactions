@@ -312,23 +312,12 @@
                 },
                 {
                     "name": "",
-                    "id": "032ef9d3-9938-4797-b10a-f72a7db661c9",
+                    "id": "8f582971-e76a-43e7-a378-67cc11548286",
                     "path": "<Gamepad>/leftShoulder",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "processors": "",
-                    "groups": ";Gamepad",
+                    "groups": ";KeyboardMouse;Gamepad",
                     "action": "Singing",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e98427b8-0258-40db-874e-791b1abccac2",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ChangeLightColor",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -339,6 +328,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";KeyboardMouse",
+                    "action": "ChangeLightColor",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "86ce6be4-7a05-47e0-b169-86c31de22844",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
                     "action": "ChangeLightColor",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -587,7 +587,7 @@
                     "path": "<Keyboard>/o",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";KeyboardMouse",
                     "action": "CharacterSwitch",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -609,7 +609,7 @@
                     "path": "<Keyboard>/j",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";KeyboardMouse",
                     "action": "Searching",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -671,6 +671,24 @@
                     "name": "CharacterSwitch",
                     "type": "Button",
                     "id": "0bc0493b-251e-47ca-9127-da67aeebb8b5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "FlyUp",
+                    "type": "Button",
+                    "id": "418c0870-b836-4f35-b244-2689ce30e2d2",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "FlyDown",
+                    "type": "Button",
+                    "id": "e25a476c-f652-4216-9ca6-3cf50fa21bd5",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -871,8 +889,52 @@
                     "path": "<Keyboard>/o",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";KeyboardMouse",
                     "action": "CharacterSwitch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5280ab0b-ac98-494b-94dc-3b72b977c1f0",
+                    "path": "<Keyboard>/space",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "FlyUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "70ccc2da-8282-4a31-9155-21208343e8f0",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "FlyUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "12dd8213-08e9-42a7-a422-1467c97cf3c9",
+                    "path": "<Keyboard>/leftCtrl",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "FlyDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f4233f31-f6fe-449e-944b-722d95257698",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "FlyDown",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

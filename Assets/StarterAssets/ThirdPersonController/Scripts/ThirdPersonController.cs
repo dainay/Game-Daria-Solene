@@ -178,8 +178,17 @@ namespace StarterAssets
         {
             float verticalMovement = 0;
 
-            if (Input.GetKey(KeyCode.Space)) verticalMovement = FlightVerticalSpeed; // Up
-            if (Input.GetKey(KeyCode.LeftControl)) verticalMovement = -FlightVerticalSpeed; // Down
+            // Клавиатура: Space | Геймпад: Right Shoulder
+            if (Keyboard.current.spaceKey.isPressed || (Gamepad.current != null && Gamepad.current.rightShoulder.isPressed))
+            {
+                verticalMovement = FlightVerticalSpeed;
+            }
+
+            // Клавиатура: Left Ctrl | Геймпад: Left Shoulder
+            if (Keyboard.current.leftCtrlKey.isPressed || (Gamepad.current != null && Gamepad.current.leftShoulder.isPressed))
+            {
+                verticalMovement = -FlightVerticalSpeed;
+            }
 
             // updating y position
             _controller.Move(new Vector3(0, verticalMovement * Time.deltaTime, 0));
