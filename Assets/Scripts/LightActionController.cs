@@ -31,28 +31,20 @@ public class LightActionController : MonoBehaviour
         Violet,
         Green
     }
-    public enum MagicLayer
-    {
-        RedLayer,
-        OrangeLayer,
-        BlueLayer,
-        VioletLayer,
-        GreenLayer
-    }
 
     //use Dictionary to keep all settings of materials and possible colors for the spehre
-    private Dictionary<MagicColor, (Material material, Color color, MagicLayer layer)> magicSettings;
+    private Dictionary<MagicColor, (Material material, Color color, string layerName)> magicSettings;
 
     private void Start()
     {
-        magicSettings = new Dictionary<MagicColor, (Material, Color, MagicLayer)>
-        {
-            { MagicColor.Red, (red, Color.red, MagicLayer.RedLayer) },
-            { MagicColor.Yellow, (yellow, Color.yellow, MagicLayer.OrangeLayer) },
-            { MagicColor.Blue, (blue, Color.blue, MagicLayer.BlueLayer) },
-            { MagicColor.Violet, (violet, new Color(0.5f, 0f, 1f), MagicLayer.VioletLayer) },
-            { MagicColor.Green, (green, Color.green, MagicLayer.GreenLayer) }
-        };
+        magicSettings = new Dictionary<MagicColor, (Material, Color, string)>
+    {
+        { MagicColor.Red, (red, Color.red, "red") },
+        { MagicColor.Yellow, (yellow, Color.yellow, "orange") }, 
+        { MagicColor.Blue, (blue, Color.blue, "blue") },
+        { MagicColor.Violet, (violet, new Color(0.5f, 0f, 1f), "violet") },
+        { MagicColor.Green, (green, Color.green, "green") }
+    };
     }
 
     public void OnLight(InputValue value)
@@ -156,7 +148,7 @@ public class LightActionController : MonoBehaviour
             }
 
             //show the layer that we recieve from the dictionary
-            layerVisibilityManager?.SetLayerVisibility(settings.layer.ToString());
+            layerVisibilityManager?.SetLayerVisibility(settings.layerName);
         }
         else
         {
