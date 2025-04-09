@@ -31,17 +31,20 @@ public class CrystalWrapper : MonoBehaviour
                 Debug.Log("Found crystal with 'crystal' tag, destroying it.");
                 Destroy(crystal.gameObject);
                 CountManager.IncrementCollected(); // increment the score when one crystal is collected
-                
+
                 if (audioSource != null)
                 {
                     audioSource.Play(); //play sound when crystal is collected
                 }
                 // Play the sound
+
+                Destroy(GetComponent<Collider>(), audioSource.clip.length);
             }
             else
             {
-                Debug.Log("No child with 'crystal' tag found under CrystalWrapper.");
+                Debug.LogWarning("Desctroying collier didnt work");
             }
+
         }
     }
 }

@@ -76,6 +76,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ShowControls",
+                    "type": "Button",
+                    "id": "90872337-8322-4abc-9377-ccaed6ec2c34",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -342,6 +351,28 @@
                     "action": "ChangeLightColor",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6542c553-554e-43f6-9441-07084a55d11b",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";KeyboardMouse",
+                    "action": "ShowControls",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f50d295e-bd9b-4055-a002-4993fbb99ccb",
+                    "path": "<Gamepad>/rightStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "ShowControls",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -401,6 +432,15 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "Press(behavior=2)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ShowControls",
+                    "type": "Button",
+                    "id": "47471022-3c28-4898-9084-62a5aa0756b6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
                     "initialStateCheck": false
                 }
             ],
@@ -624,6 +664,28 @@
                     "action": "Searching",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ae321af7-4fc6-4ece-bd3c-ef1534fdbd2f",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";KeyboardMouse",
+                    "action": "ShowControls",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ed269e49-cc7b-4919-b59e-b3b2264f9ff8",
+                    "path": "<Gamepad>/rightStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "ShowControls",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -689,6 +751,15 @@
                     "name": "FlyDown",
                     "type": "Button",
                     "id": "e25a476c-f652-4216-9ca6-3cf50fa21bd5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ShowControls",
+                    "type": "Button",
+                    "id": "c8025668-594a-4d33-ad26-5eea1f6720f0",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -935,6 +1006,28 @@
                     "processors": "",
                     "groups": ";Gamepad",
                     "action": "FlyDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1b1815fc-6679-49b5-aeb5-befab5e9750a",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";KeyboardMouse",
+                    "action": "ShowControls",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "41b337a7-e22f-4941-9e33-c12aa5863849",
+                    "path": "<Gamepad>/rightStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "ShowControls",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

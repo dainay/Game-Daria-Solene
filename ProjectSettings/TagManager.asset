@@ -17,6 +17,7 @@ TagManager:
   - Hidden
   - portal1
   - portal2
+  - Intro
   layers:
   - Default
   - TransparentFX
